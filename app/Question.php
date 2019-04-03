@@ -31,8 +31,6 @@ class Question extends Model
 
     public function getStatusAttribute()
     {
-        return $this->answers > 0 ?
-            ($this->best_answer_id ? 'answered-accepted' : 'answered')
-        : 'unanswered';
+        return $this->answers > 0 ? ($this->best_answer_id ? 'answered-accepted' : 'answered') : 'unanswered';
     }
 }

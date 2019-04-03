@@ -26,7 +26,8 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        $question = [];
+        return view('questions.create', compact('question'));
     }
 
     /**
