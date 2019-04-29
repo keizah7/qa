@@ -6,8 +6,8 @@ use App\Answer;
 use App\Question;
 use Illuminate\Http\Request;
 
-class AnswerController extends Controller
-{
+class AnswersController extends Controller
+{    
     public function __construct()
     {
         $this->middleware('auth')->except('index');
@@ -15,7 +15,7 @@ class AnswerController extends Controller
 
     public function index(Question $question)
     {
-        return $question->answers()->with('user')->simplePaginate(3);
+        return $question->answers()->with('user')->simplePaginate(3);    
     }
 
     /**
@@ -30,7 +30,8 @@ class AnswerController extends Controller
             'body' => 'required'
         ]) + ['user_id' => \Auth::id()]);
 
-        if ($request->expectsJson()) {
+        if ($request->expectsJson())
+        {
             return response()->json([
                 'message' => "Your answer has been submitted successfully",
                 'answer' => $answer->load('user')
@@ -38,7 +39,7 @@ class AnswerController extends Controller
         }
 
         return back()->with('success', "Your answer has been submitted successfully");
-    }
+    }    
 
     /**
      * Show the form for editing the specified resource.
@@ -90,7 +91,8 @@ class AnswerController extends Controller
 
         $answer->delete();
 
-        if (request()->expectsJson()) {
+        if (request()->expectsJson())
+        {
             return response()->json([
                 'message' => "Your answer has been removed"
             ]);

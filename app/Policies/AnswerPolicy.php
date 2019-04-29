@@ -8,7 +8,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 
 class AnswerPolicy
 {
-    use HandlesAuthorization;
+    use HandlesAuthorization;    
 
     /**
      * Determine whether the user can update the answer.

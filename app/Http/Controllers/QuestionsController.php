@@ -6,10 +6,9 @@ use App\Question;
 use Illuminate\Http\Request;
 use App\Http\Requests\AskQuestionRequest;
 
-class QuestionController extends Controller
+class QuestionsController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
@@ -19,10 +18,10 @@ class QuestionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {        
         $questions = Question::with('user')->latest()->paginate(10);
 
-        return view('questions.index', compact('questions'));
+        return view('questions.index', compact('questions'));        
     }
 
     /**
@@ -88,7 +87,8 @@ class QuestionController extends Controller
 
         $question->update($request->only('title', 'body'));
 
-        if ($request->expectsJson()) {
+        if ($request->expectsJson())
+        {
             return response()->json([
                 'message' => "Your question has been updated.",
                 'body_html' => $question->body_html
@@ -110,7 +110,8 @@ class QuestionController extends Controller
 
         $question->delete();
 
-        if (request()->expectsJson()) {
+        if (request()->expectsJson()) 
+        {
             return response()->json([
                 'message' => "Your question has been deleted."
             ]);

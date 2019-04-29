@@ -14,9 +14,9 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('title');
-            $table->string('slug')->unique()->default(rand(0, 99));
+            $table->string('slug')->unique();
             $table->text('body');
             $table->unsignedInteger('views')->default(0);
             $table->unsignedInteger('answers')->default(0);
@@ -24,8 +24,7 @@ class CreateQuestionsTable extends Migration
             $table->unsignedInteger('best_answer_id')->nullable();
             $table->unsignedInteger('user_id');
             $table->timestamps();
-        });
-        Schema::table('questions', function (Blueprint $table) {
+
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
