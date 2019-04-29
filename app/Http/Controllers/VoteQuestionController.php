@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Question;
 use Illuminate\Http\Request;
 
@@ -16,7 +15,14 @@ class VoteQuestionController extends Controller
     {
         $vote = (int) request()->vote;
 
-        auth()->user()->voteQuestion($question, $vote);
+        $votesCount = auth()->user()->voteQuestion($question, $vote);
+
+        if (request()->expectsJson()) {
+            return response()->json([
+                'message' => 'Thanks for the feedback',
+                'votesCount' => $votesCount
+            ]);
+        }
 
         return back();
     }

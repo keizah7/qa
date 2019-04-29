@@ -15,12 +15,14 @@
 <script>
 export default {
     props: ['model', 'label'],
+
     computed: {
-        postDate(){
+        postDate () {
             return this.label + " " + this.model.created_date;
-        }
+        }        
     },
-    data(){
+
+    data () {
         return {
             user: this.model.user
         }

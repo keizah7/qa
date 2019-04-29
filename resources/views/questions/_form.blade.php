@@ -4,7 +4,7 @@
     <input type="text" name="title" value="{{ old('title', $question->title) }}" id="question-title" class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}">
 
     @if ($errors->has('title'))
-        <div class="invalid-feedback">``
+        <div class="invalid-feedback">
             <strong>{{ $errors->first('title') }}</strong>
         </div>
     @endif

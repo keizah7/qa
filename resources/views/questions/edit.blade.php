@@ -12,7 +12,7 @@
                             <a href="{{ route('questions.index') }}" class="btn btn-outline-secondary">Back to all Questions</a>
                         </div>
                     </div>
-
+                    
                 </div>
 
                 <div class="card-body">

@@ -1,7 +1,7 @@
 <?php
 namespace App;
 
-trait VotableTrait
+trait VotableTrait 
 {
     public function votes()
     {

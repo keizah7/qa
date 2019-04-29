@@ -12,7 +12,7 @@
                             <a href="{{ route('questions.create') }}" class="btn btn-outline-secondary">Ask Question</a>
                         </div>
                     </div>
-
+                    
                 </div>
 
                 <div class="card-body">

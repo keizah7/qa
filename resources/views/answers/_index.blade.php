@@ -8,9 +8,9 @@
                     </div>
                     <hr>
                     @include ('layouts._messages')
-
+                    
                     @foreach ($answers as $answer)
-                        @include ('answers._answer')
+                        @include ('answers._answer')                        
                     @endforeach
                 </div>
             </div>
