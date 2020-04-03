@@ -6,7 +6,7 @@
 ![Watchers](https://img.shields.io/github/watchers/keizah7/qa?style=social)
 
 # Questions &amp; Answers application with Laravel 5
-
-Fullstack Web Development With Laravel and Vue.js
+## Fullstack Web Development With Laravel and Vue.js
+This project is for educational porpuses only. Pull request are welcome! Thank you for your cooperation!
 
 ### Authors: [Artūras](https://github.com/keizah7) ![Followers](https://img.shields.io/github/followers/keizah7?style=social)
